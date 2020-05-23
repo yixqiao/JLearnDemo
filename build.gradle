@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'maven'
+}
+
+group 'me.yixqiao'
+version '0.1.0'
+
+application {
+    mainClassName = "me.yixqiao.jlearndemos.main.MNIST"
+}
+
+repositories {
+    mavenCentral()
+
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/yixqiao/jlearn")
+        credentials {
+            username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+            password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+        }
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'me.yixqiao', name: 'JLearn', version: '0.1.1-alpha'
+
+}
