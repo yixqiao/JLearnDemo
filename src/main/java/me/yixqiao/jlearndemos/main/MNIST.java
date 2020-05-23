@@ -2,7 +2,7 @@ package me.yixqiao.jlearndemos.main;
 
 import me.yixqiao.jlearn.activations.ReLU;
 import me.yixqiao.jlearn.activations.Softmax;
-import me.yixqiao.jlearn.core.Matrix;
+import me.yixqiao.jlearn.matrix.Matrix;
 import me.yixqiao.jlearn.layers.Dense;
 import me.yixqiao.jlearn.layers.InputLayer;
 import me.yixqiao.jlearn.losses.CrossEntropy;
@@ -21,7 +21,7 @@ public class MNIST {
 
     public static void main(String[] args) {
         MNIST mnist = new MNIST();
-//        mnist.writeDataset();
+        // mnist.writeDataset();
         mnist.initInputs();
         mnist.buildModel();
         mnist.train();
@@ -74,7 +74,7 @@ public class MNIST {
             DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("datasets/mnist/data/train.dat")));
             String line;
             br.readLine(); // Discard first line
-            for(int imgCount=0; imgCount < 60000; imgCount++){
+            for (int imgCount = 0; imgCount < 60000; imgCount++) {
                 line = br.readLine();
                 String[] values = line.split(",");
                 Matrix output = new Matrix(1, 10);

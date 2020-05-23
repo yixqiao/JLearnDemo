@@ -2,7 +2,7 @@ package me.yixqiao.jlearndemos.main;
 
 import me.yixqiao.jlearn.activations.ReLU;
 import me.yixqiao.jlearn.activations.Softmax;
-import me.yixqiao.jlearn.core.Matrix;
+import me.yixqiao.jlearn.matrix.Matrix;
 import me.yixqiao.jlearn.layers.Dense;
 import me.yixqiao.jlearn.layers.InputLayer;
 import me.yixqiao.jlearn.losses.CrossEntropy;

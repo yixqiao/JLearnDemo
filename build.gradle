@@ -26,6 +26,6 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation group: 'me.yixqiao', name: 'JLearn', version: '0.1.1-alpha'
+    implementation group: 'me.yixqiao', name: 'JLearn', version: '0.1.2-alpha'
 
 }
