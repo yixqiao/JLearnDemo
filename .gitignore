@@ -1,6 +1,7 @@
 # MNIST dataset
 datasets/mnist/csv/*
 datasets/mnist/data/train.dat
+datasets/mnist/data/test.dat
 
 # Gradle
 .gradle
