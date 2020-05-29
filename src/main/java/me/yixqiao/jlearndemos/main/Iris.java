@@ -7,6 +7,7 @@ import me.yixqiao.jlearn.layers.Dense;
 import me.yixqiao.jlearn.layers.InputLayer;
 import me.yixqiao.jlearn.losses.CrossEntropy;
 import me.yixqiao.jlearn.metrics.Accuracy;
+import me.yixqiao.jlearn.metrics.Metric;
 import me.yixqiao.jlearn.models.Model;
 
 import java.io.BufferedReader;
@@ -15,6 +16,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Train a network on the iris flowers dataset.
+ */
 public class Iris {
     ArrayList<Matrix> inputsAL = new ArrayList<>();
     ArrayList<Matrix> outputsAL = new ArrayList<>();
@@ -42,7 +46,10 @@ public class Iris {
     private void train() {
         printPredictions();
 
-        model.fit(inputs, outputs, 0.004, 32, 30000, 1000, new Accuracy());
+        ArrayList<Metric> metrics = new ArrayList<>() {{
+            add(new Accuracy());
+        }};
+        model.fit(inputs, outputs, 0.004, 16, 30000, 1000, metrics);
 
         printPredictions();
     }
